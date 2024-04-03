@@ -1,2 +1,2 @@
 # ssm-studynew
-ssm框架学习相关代码
+mybatis学习相关代码
