@@ -1,0 +1,17 @@
+# 缩进表示层级
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /boot
+
+# 自定义的key
+zwf:
+  user:
+    username: root
+    password: 123456
+    gfs:
+      - a
+      - b
+      - c
