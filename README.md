@@ -1,2 +1,2 @@
 # ssm-studynew
-ssm框架学习相关代码
+springboot学习相关代码
