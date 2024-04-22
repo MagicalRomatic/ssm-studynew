@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--无参构造的对象创建-->
+    <bean id="userDao" class="com.atguigu.ioc_02.UserDao" />
+    <bean id="userService" class="com.atguigu.ioc_02.UserService">
+        <!--DI配置，依赖注入
+        ref 传入对象的id
+        value 直接传值
+        二选一
+        -->
+        <constructor-arg ref="userDao"/>
+    </bean>
+
+    <!--多个参数的DI配置-->
+    <bean id="userService1" class="com.atguigu.ioc_02.UserService">
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="name" value="二狗子"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>
+
+    <!--用set方法进行注入-->
+    <bean id="movieFinder" class="com.atguigu.ioc_02.MovieFinder"/>
+    <bean id="simpleMovieLister" class="com.atguigu.ioc_02.SimpleMovieLister">
+        <!--name对应的是set后的方法名-->
+        <property name="movieFinder" ref="movieFind"/>
+        <property name="movieName" value="消失的他"/>
+    </bean>
+</beans>
